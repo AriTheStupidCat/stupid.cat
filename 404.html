@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ca">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — stupid.cat</title>
+  <meta name="description" content="Aquesta pàgina no existeix. / This page doesn't exist.">
+  <meta name="theme-color" content="#1e1e2e">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/cat.svg">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="error-wrap">
+    <p class="error-code">404</p>
+
+    <h1>
+      <span data-i18n="ca">Aquesta pàgina s'ha escapat.</span>
+      <span data-i18n="en" hidden>This page wandered off.</span>
+    </h1>
+
+    <p>
+      <span data-i18n="ca">No hi ha res aquí. Potser el gat ho ha amagat en algun racó.</span>
+      <span data-i18n="en" hidden>There's nothing here. Maybe the cat hid it somewhere.</span>
+    </p>
+
+    <a class="btn-home" href="/">
+      <span data-i18n="ca">Torna a l'inici</span>
+      <span data-i18n="en" hidden>Back home</span>
+    </a>
+
+    <div class="lang-switch" role="group" aria-label="Tria d'idioma / Language" style="margin-top:1.6rem;">
+      <button type="button" class="lang-btn is-active" data-lang="ca" aria-pressed="true">CA</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+
+</html>
