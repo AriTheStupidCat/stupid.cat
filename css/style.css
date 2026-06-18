@@ -1,0 +1,319 @@
+/* ============================================================
+   style.css — the stylesheet for stupid.cat (root site)
+   Self-contained: palette + base pulled from main.css so this
+   page doesn't depend on the big shared stylesheet.
+   Theme: Catppuccin Mocha.
+   ============================================================ */
+
+@import url(/css/fonts.css);
+
+/* ---------- palette (Catppuccin Mocha, accent = mauve) ---------- */
+:root {
+  --base:      #1e1e2e;
+  --mantle:    #181825;
+  --crust:     #11111b;
+  --text:      #cdd6f4;
+  --subtext-1: #bac2de;
+  --subtext-0: #a6adc8;
+  --surface-0: #313244;
+  --surface-1: #45475a;
+  --surface-2: #585b70;
+  --mauve:     #cba6f7;
+  --yellow:    #f9e2af;
+  --red:       #f38ba8;
+  --accent-rgb: 203, 166, 247;
+}
+
+/* ---------- base (from main.css) ---------- */
+* { box-sizing: border-box; }
+
+html {
+  background: linear-gradient(135deg, var(--base) 0%, var(--mantle) 60%, var(--crust) 100%);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  font-family: 'Comic Code', ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--base) 0%, var(--mantle) 60%, var(--crust) 100%);
+}
+
+html:has(.home-wrap),
+body:has(.home-wrap) {
+  height: auto;
+  min-height: 100dvh;
+  overflow-y: auto;
+}
+body:has(.home-wrap) {
+  align-items: flex-start;
+}
+
+.home-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 880px;
+  margin-inline: auto;
+  padding-bottom: 3rem;
+}
+
+/* ---------- skip link ---------- */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--yellow, #f9e2af);
+  color: var(--crust, #11111b);
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  font-weight: 600;
+  z-index: 50;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 1rem; }
+
+/* ---------- top bar: brand + language ---------- */
+.home-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.home-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--text, #cdd6f4);
+  text-decoration: none;
+}
+.home-brand .cat { width: 22px; height: 22px; display: block; }
+.home-brand .dot { color: var(--red, #f38ba8); }
+
+.lang-switch {
+  display: inline-flex;
+  background: var(--surface-0, #313244);
+  border: 1px solid var(--surface-1, #45475a);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+.lang-btn {
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--subtext-0, #a6adc8);
+  background: transparent;
+  border: 0;
+  padding: 0.32rem 0.65rem;
+  border-radius: 999px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.lang-btn:hover { color: var(--text, #cdd6f4); }
+.lang-btn.is-active {
+  color: var(--crust, #11111b);
+  background: rgb(var(--accent-rgb, 203, 166, 247));
+}
+
+/* ---------- hero ---------- */
+.home-hero {
+  text-align: center;
+  margin: 1.5rem 0 2.75rem;
+}
+.home-hero .kicker {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: var(--subtext-0, #a6adc8);
+  margin-bottom: 1rem;
+}
+.home-hero h1 {
+  margin: 0 0 0.9rem;
+  font-size: clamp(2.6rem, 10vw, 4.5rem);
+  line-height: 1;
+  font-weight: 700;
+  color: rgb(var(--accent-rgb, 203, 166, 247));
+}
+.home-hero h1 .dot { color: var(--red, #f38ba8); }
+.hero-sub {
+  margin: 0 auto 0.75rem;
+  max-width: 36ch;
+  font-size: clamp(1.05rem, 3vw, 1.35rem);
+  font-weight: 500;
+  color: var(--text, #cdd6f4);
+}
+.hero-lede {
+  margin: 0 auto;
+  max-width: 46ch;
+  color: var(--subtext-0, #a6adc8);
+}
+
+/* ---------- section heading ---------- */
+.section-head {
+  margin: 0 0 1.1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text, #cdd6f4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.section-head::before {
+  content: "";
+  width: 1.3rem;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--yellow, #f9e2af), var(--red, #f38ba8));
+}
+
+/* ---------- subdomain cards ---------- */
+.spaces { margin-bottom: 2.75rem; }
+
+.space-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.9rem;
+}
+
+.space-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  height: 100%;
+  padding: 1.1rem 1.15rem 1.25rem;
+  border-radius: 16px;
+  background: var(--surface-0, #313244);
+  border: 1px solid var(--surface-1, #45475a);
+  color: var(--text, #cdd6f4);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.15s ease, border-color 0.15s ease,
+    background 0.15s ease, box-shadow 0.15s ease;
+}
+.space-card:hover {
+  transform: translateY(-3px);
+  background: var(--surface-1, #45475a);
+  border-color: rgb(var(--accent-rgb, 203, 166, 247));
+  box-shadow: 0 6px 20px rgba(var(--accent-rgb, 203, 166, 247), 0.22);
+}
+.space-host {
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+.space-host .dot { color: var(--red, #f38ba8); }
+.space-alias {
+  font-size: 0.76rem;
+  color: var(--subtext-0, #a6adc8);
+  opacity: 0.85;
+}
+.space-alias .dot { color: var(--red, #f38ba8); }
+.space-desc { color: var(--subtext-0, #a6adc8); font-size: 0.92rem; }
+.space-go {
+  margin-top: auto;
+  align-self: flex-end;
+  font-size: 1.2rem;
+  color: var(--subtext-0, #a6adc8);
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+.space-card:hover .space-go {
+  transform: translateX(3px);
+  color: rgb(var(--accent-rgb, 203, 166, 247));
+}
+
+.spaces-note {
+  margin: 1.1rem 0 0;
+  color: var(--subtext-0, #a6adc8);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ---------- about ---------- */
+.about { margin-bottom: 2.5rem; }
+.about-body {
+  max-width: 62ch;
+  padding: 1.4rem 1.6rem;
+  border-radius: 16px;
+  background: var(--mantle, #181825);
+  border: 1px solid var(--surface-0, #313244);
+}
+.about-body p { margin: 0 0 0.9rem; }
+.about-body p:last-child { margin-bottom: 0; }
+.about-body strong { color: var(--yellow, #f9e2af); }
+.about-soft { color: var(--subtext-0, #a6adc8); font-size: 0.95rem; }
+
+/* ---------- footer ---------- */
+.home-footer {
+  text-align: center;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--surface-0, #313244);
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 1.1rem;
+  margin-bottom: 0.9rem;
+}
+.footer-links a {
+  font-size: 0.88rem;
+  color: var(--subtext-0, #a6adc8);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.footer-links a:hover {
+  color: var(--text, #cdd6f4);
+  border-bottom-color: var(--red, #f38ba8);
+}
+.footer-tag { margin: 0 0 0.35rem; font-weight: 600; color: var(--text, #cdd6f4); }
+.footer-made { margin: 0; color: var(--subtext-0, #a6adc8); font-size: 0.88rem; }
+
+/* ---------- 404 ---------- */
+.error-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 32rem;
+  text-align: center;
+}
+.error-code {
+  margin: 0;
+  font-size: clamp(4rem, 20vw, 8rem);
+  line-height: 1;
+  font-weight: 700;
+  color: rgb(var(--accent-rgb, 203, 166, 247));
+}
+.error-wrap h1 { margin: 0.4rem 0 0.7rem; font-size: 1.3rem; color: var(--text, #cdd6f4); }
+.error-wrap p { margin: 0 0 1.5rem; color: var(--subtext-0, #a6adc8); }
+.error-wrap .btn-home {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: rgb(var(--accent-rgb, 203, 166, 247));
+  color: var(--crust, #11111b);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.error-wrap .btn-home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(var(--accent-rgb, 203, 166, 247), 0.35);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 420px) {
+  .home-top { flex-wrap: wrap; }
+}

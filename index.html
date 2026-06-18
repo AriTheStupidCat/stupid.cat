@@ -1,51 +1,169 @@
 <!doctype html>
-<html lang="en">
+<html lang="ca">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>stupid.cat</title>
-  <meta name="description" content="A private domain for Ari and friends to grab funny subdomains and dodge rising domain prices.">
-  <meta name="theme-color" content="#cba6f7">
-  <meta name="robots" content="noindex">
-  <style>
-    :root {
-      --base: #1e1e2e;
-      --text: #cdd6f4;
-      --muted: #a6adc8;
-      --mauve: #cba6f7;
-    }
-    html, body { height: 100%; margin: 0; }
-    body {
-      display: grid;
-      place-items: center;
-      padding: 1.5rem;
-      box-sizing: border-box;
-      background: var(--base);
-      color: var(--text);
-      font: 1.125rem/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      text-align: center;
-    }
-    main { max-width: 32rem; }
-    a {
-      color: var(--mauve);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-    }
-    a:hover { border-bottom-color: currentColor; }
-    .tag {
-      margin-top: 1.25rem;
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
-  </style>
+
+  <title>stupid.cat — un petit racó d'Internet</title>
+  <meta name="description"
+    content="stupid.cat és un petit espai web personal per a projectes, experiments i coses que fem amb amics.">
+  <meta name="author" content="Ari & Clove">
+  <meta name="theme-color" content="#1e1e2e">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://stupid.cat/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="stupid.cat">
+  <meta property="og:title" content="stupid.cat — un petit racó d'Internet">
+  <meta property="og:description"
+    content="Un petit espai web personal per a projectes, experiments i coses que fem.">
+  <meta property="og:locale" content="ca_ES">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:url" content="https://stupid.cat/">
+  <meta property="og:image" content="https://stupid.cat/assets/cat.svg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="stupid.cat">
+  <meta name="twitter:description"
+    content="Un petit espai web personal per a projectes, experiments i coses que fem.">
+  <meta name="twitter:image" content="https://stupid.cat/assets/cat.svg">
+
+  <link rel="icon" href="/assets/cat.svg">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <main>
-    <p>A private domain for <a href="https://a.stupid.cat">Ari</a> and friends to grab funny subdomains and save money on the ever-rising price of domains.</p>
-    <p class="tag">A proper site is on the way.</p>
-  </main>
+  <a class="skip-link" href="#main">Salta al contingut / Skip to content</a>
+
+  <div class="home-wrap">
+
+    <header class="home-top">
+      <a class="home-brand" href="/">
+        <img class="cat" src="/assets/cat.svg" alt="" aria-hidden="true" width="22" height="22">
+        <span>stupid<span class="dot">.</span>cat</span>
+      </a>
+
+      <div class="lang-switch" role="group" aria-label="Tria d'idioma / Language">
+        <button type="button" class="lang-btn is-active" data-lang="ca" aria-pressed="true">CA</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </header>
+
+    <main id="main">
+
+      <!-- ===== HERO ===== -->
+      <section class="home-hero" aria-labelledby="hero-title">
+        <p class="kicker">
+          <span data-i18n="ca">un racó petit, fet a casa</span>
+          <span data-i18n="en" hidden>a small, homemade corner</span>
+        </p>
+
+        <h1 id="hero-title">stupid<span class="dot">.</span>cat</h1>
+
+        <p class="hero-sub">
+          <span data-i18n="ca">Un petit espai web personal per a projectes, experiments i coses que fem.</span>
+          <span data-i18n="en" hidden>A small personal web space for projects, experiments, and things we build.</span>
+        </p>
+
+        <p class="hero-lede">
+          <span data-i18n="ca">És un raconet privat on uns quants amics poden tenir el seu propi espai a Internet.</span>
+          <span data-i18n="en" hidden>It's a small private space where a few friends can have their own corner of the internet.</span>
+        </p>
+      </section>
+
+      <!-- ===== SUBDOMAINS ===== -->
+      <section class="spaces" aria-labelledby="spaces-title">
+        <h2 id="spaces-title" class="section-head">
+          <span data-i18n="ca">Els espais</span>
+          <span data-i18n="en" hidden>The spaces</span>
+        </h2>
+
+        <ul class="space-grid">
+          <li>
+            <a class="space-card" href="https://c.stupid.cat">
+              <span class="space-host">c<span class="dot">.</span>stupid.cat</span>
+              <span class="space-alias">↳ clove<span class="dot">.</span>stupid.cat <span data-i18n="ca">hi redirigeix</span><span data-i18n="en" hidden>redirects here</span></span>
+              <span class="space-desc">
+                <span data-i18n="ca">L'espai personal de la Clove — projectes, experiments i proves.</span>
+                <span data-i18n="en" hidden>Clove's personal space — projects, experiments and tinkering.</span>
+              </span>
+              <span class="space-go" aria-hidden="true">→</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="space-card" href="https://a.stupid.cat">
+              <span class="space-host">a<span class="dot">.</span>stupid.cat</span>
+              <span class="space-alias">↳ ari<span class="dot">.</span>stupid.cat <span data-i18n="ca">hi redirigeix</span><span data-i18n="en" hidden>redirects here</span></span>
+              <span class="space-desc">
+                <span data-i18n="ca">L'espai personal de l'Ari.</span>
+                <span data-i18n="en" hidden>Ari's personal space.</span>
+              </span>
+              <span class="space-go" aria-hidden="true">→</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <p class="spaces-note">
+          <span data-i18n="ca">Amb el temps potser n'apareixen uns quants més.</span>
+          <span data-i18n="en" hidden>A few more may show up over time.</span>
+        </p>
+      </section>
+
+      <!-- ===== ABOUT ===== -->
+      <section class="about" aria-labelledby="about-title">
+        <h2 id="about-title" class="section-head">
+          <span data-i18n="ca">Què és això?</span>
+          <span data-i18n="en" hidden>What is this?</span>
+        </h2>
+
+        <div class="about-body">
+          <p data-i18n="ca">
+            <strong>stupid.cat</strong> és un espai privat per a amics i projectes personals. Un lloc petit on
+            experimentar, aprendre, fer coses i mantenir webs personals en línia sense que cadascú necessiti el
+            seu propi domini.
+          </p>
+          <p data-i18n="en" hidden>
+            <strong>stupid.cat</strong> is a private namespace for friends and personal projects. A small place
+            to experiment, learn, build things, and keep personal websites online without everyone needing
+            their own domain.
+          </p>
+
+          <p class="about-soft">
+            <span data-i18n="ca">
+              Cada subdomini fa servir l'idioma que vol. Aquesta pàgina parla català perquè el domini acaba en
+              <code>.cat</code> 💛❤️
+            </span>
+            <span data-i18n="en" hidden>
+              Each subdomain uses whatever language it likes. This page speaks Catalan because the domain ends
+              in <code>.cat</code> 💛❤️
+            </span>
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="home-footer">
+      <div class="footer-links" aria-label="Subdominis disponibles">
+        <a href="https://c.stupid.cat">c.stupid.cat</a>
+        <a href="https://a.stupid.cat">a.stupid.cat</a>
+      </div>
+      <p class="footer-tag">stupid.cat — <span data-i18n="ca">projectes i experiments personals</span><span
+          data-i18n="en" hidden>personal projects and experiments</span></p>
+      <p class="footer-made">
+        <span data-i18n="ca">Fet amb cura per l'Ari i la Clove.</span>
+        <span data-i18n="en" hidden>Made with care by Ari &amp; Clove.</span>
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="/js/main.js" defer></script>
 </body>
 
 </html>
